@@ -15,7 +15,6 @@ ADMIN_USER_ID = int(ensure_admin_user())
 
 st.title("Validação das Avaliações")
 
-# --- Configurações ---
 EMOTIONS = [
     'Não selecionado', 'Felicidade', 'Tristeza', 'Nojo',
     'Raiva', 'Medo', 'Surpresa', 'Desprezo', 'Neutro'
@@ -34,7 +33,6 @@ if df.empty:
     st.info("O arquivo avaliacoes.csv está vazio.")
     st.stop()
 
-# ---------- Funções utilitárias ----------
 SELECT_KEYS = ["h_sent", "h_pol", "g_sent", "g_pol"] + \
               [f"sent_{i}" for i in range(1, 4)] + [f"pol_{i}" for i in range(1, 4)]
 
@@ -59,6 +57,15 @@ def go_next():
     # Remove a notícia atual para pegar a próxima
     if "news" in st.session_state:
         del st.session_state["news"]
+
+
+
+
+
+
+
+
+
 
 # ---------- Obter notícia não avaliada ----------
 if "news" not in st.session_state:
